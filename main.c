@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
+#include "examples/test_vprintf.h"
+
 
 #define E_FOO_FAIL (0)
 #define E_FOO_SUCCESS (1)
@@ -21,6 +23,7 @@ int my_foo()
 	int fail = x + y;
 	if (fail == E_FOO_FAIL)
 	{
+		errmsg("%s %d %s", "Failed", 100, "times");
 		printf("An error occurred!\n");
 		return 0;
 	}
